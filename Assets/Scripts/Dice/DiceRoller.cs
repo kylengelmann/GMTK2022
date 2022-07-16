@@ -12,8 +12,6 @@ public class DiceRoller : MonoBehaviour
     {
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        Debug.Log(mouseRay.origin);
-
         Vector3 mouseLocation = mouseRay.origin + mouseRay.direction * (RollHeight - mouseRay.origin.y) / mouseRay.direction.y;
 
         transform.position = mouseLocation;
