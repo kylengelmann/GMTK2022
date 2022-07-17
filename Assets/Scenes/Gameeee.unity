@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 56142258}
   costText: {fileID: 2122781544}
-  cost: 10
+  cost: 15
 --- !u!1 &84766921
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 370328375}
   costText: {fileID: 84766923}
-  cost: 15
+  cost: 30
 --- !u!1 &384616200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,6 +3327,10 @@ MonoBehaviour:
   SpawnDelay: 1
   waves:
   - {fileID: 11400000, guid: d1e71cc55213397469633d7d0721157e, type: 2}
+  - {fileID: 11400000, guid: 5a8cef8bf752d8c4d8a98d64067fa4c9, type: 2}
+  - {fileID: 11400000, guid: caab70e744eb2c44cac962587d078ded, type: 2}
+  - {fileID: 11400000, guid: d41b83825c99bab4191987333ad978ed, type: 2}
+  - {fileID: 11400000, guid: d7877e90b28aadd49accd02e587cc489, type: 2}
   preWaveTime: 5
 --- !u!1 &1796491499
 GameObject:

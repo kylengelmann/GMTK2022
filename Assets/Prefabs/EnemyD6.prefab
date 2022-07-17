@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyD6
       objectReference: {fileID: 0}
+    - target: {fileID: 8858871991558938495, guid: 018da50606573a342b151ceb2a539895, type: 3}
+      propertyPath: Coins
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1576085276524411828, guid: 018da50606573a342b151ceb2a539895, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 018da50606573a342b151ceb2a539895, type: 3}
