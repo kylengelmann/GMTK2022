@@ -6,6 +6,11 @@ public class DieBase : MonoBehaviour
 {
     List<Vector3> faces = new List<Vector3>();
 
+    public delegate void OnCollision(Collision collision);
+    public OnCollision onCollision;
+
+    Coroutine currentRoll;
+
     private void Awake()
     {
         int i = 1;
@@ -38,10 +43,42 @@ public class DieBase : MonoBehaviour
         return bestFace;
     }
 
+    public int GetMaxFace() { return faces.Count; }
+
     public Quaternion GetRotationForFace(int face)
     {
         Vector3 faceDir = transform.TransformDirection(faces[face-1]);
         
         return Quaternion.FromToRotation(faceDir, Vector3.up) * transform.rotation;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(onCollision != null)
+        {
+            onCollision(collision);
+        }
+    }
+
+    public void RollToFace(int face, float rollDuration)
+    {
+        if(currentRoll != null)
+        {
+            StopCoroutine(currentRoll);
+        }
+        currentRoll = StartCoroutine(Roll(face, rollDuration));
+    }
+
+    IEnumerator Roll(int face, float duration)
+    {
+        Quaternion fromRot = transform.rotation;
+        Quaternion toRot = GetRotationForFace(face);
+        float currentRollTime = 0f;
+        while (currentRollTime < duration)
+        {
+            transform.rotation = Quaternion.Slerp(fromRot, toRot, currentRollTime / duration);
+            currentRollTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }

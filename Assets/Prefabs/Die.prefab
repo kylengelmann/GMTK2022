@@ -126,5 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9f4b45b0c96124aa595c8b122b8b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 2133119635344564316, guid: ce9fddf08747daa4497358540464ef91, type: 3}
-  sleepThreshold: 100
+  towerPrefab: {fileID: 6745742608920534862, guid: 9461a821388749d4d96df068acb425e0, type: 3}

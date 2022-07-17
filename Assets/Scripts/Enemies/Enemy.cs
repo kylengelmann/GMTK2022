@@ -7,39 +7,74 @@ public class Enemy : MonoBehaviour
 {
     public NavMeshAgent navAgent {get; private set;}
 
-    Rigidbody rig;
+    public Rigidbody rig {get; private set; }
+    DieBase die;
 
     [System.NonSerialized]
     public GameObject End;
+
+    int Health;
+
+    public float rollDuration = .5f;
 
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.updateRotation = false;
 
-        rig = GetComponent<Rigidbody>();
+        rig = GetComponentInChildren<Rigidbody>();
+
+        die = GetComponentInChildren<DieBase>();
+        die.onCollision += OnCollision;
+    }
+
+    private void Start()
+    {
+        Health = Random.Range(1, die.GetMaxFace() + 1);
+
+        die.transform.rotation = die.GetRotationForFace(Health);
     }
 
     private void Update()
     {
-        if((!navAgent.enabled) && (rig.IsSleeping() || rig.isKinematic))
+        if ((navAgent.isStopped) && (rig.IsSleeping() || rig.isKinematic))
         {
             rig.isKinematic = true;
             rig.velocity = Vector3.zero;
             rig.angularVelocity = Vector3.zero;
-            navAgent.enabled = true;
+
+            transform.position = rig.transform.position;
+            rig.transform.localPosition = Vector3.zero;
+
             navAgent.isStopped = false;
             navAgent.SetDestination(End.transform.position);
+
+            Health = die.GetValue();
+
+            die.RollToFace(Health, rollDuration);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollision(Collision collision)
     {
-        if (rig.IsSleeping() || rig.isKinematic)
+        if (rig.isKinematic)
         {
-            navAgent.enabled = false;
+            navAgent.isStopped = true;
             rig.isKinematic = false;
             rig.AddForceAtPosition(-collision.impulse, collision.GetContact(0).point, ForceMode.Impulse);
         }
+    }
+
+    public void Damage(int damage)
+    {
+        Health -= damage;
+
+        if(Health <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        die.RollToFace(Health, rollDuration);
     }
 }
