@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
 
     bool bReroll;
 
+    bool bIsGameOver;
+    bool bWon;
+    public EnemySpawner spawner;
+
+    bool bIsRestarting;
+
     private void Awake()
     {
         gameManager = this;
@@ -74,8 +80,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        bIsGameOver = true;
+        this.enabled = false;
+        uiManager.GameOver();
+    }
+
+    public void RestartGame()
+    {
+        if(bIsRestarting) return;
+
+        bIsRestarting = true;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    void CheckWin()
+    {
+        if(bIsGameOver) return;
+
+        if(spawner.wave >= spawner.waves.Count && FindObjectsOfType<Enemy>().Length == 0)
+        {
+            bWon = true;
+            this.enabled = false;
+            uiManager.Won();
+        }
+    }
+
     private void Update()
     {
+        CheckWin();
+
         if(!bReroll) return;
 
         if(Input.GetKeyDown(KeyCode.Escape))

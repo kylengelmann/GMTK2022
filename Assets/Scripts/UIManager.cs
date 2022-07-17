@@ -6,14 +6,23 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
+    public GameObject gameUI;
+    public GameObject winUI;
+    public GameObject loseUI;
+
     public CoinButton rerollButton;
     public CoinButton towerButton;
     public Text coinCount;
+
 
     public GameObject rerollPanel;
     public Text rerollText;
 
     public GameObject rollPanel;
+
+    public GameObject incoming;
+    public Text incomingText;
+
     public void OnCoinsUpdated(int newCoinCount)
     {
         rerollButton.UpdateCoins(newCoinCount);
@@ -53,5 +62,21 @@ public class UIManager : MonoBehaviour
             rerollPanel.SetActive(true);
             rerollText.text = "Select " + numReroll + " more towers to re-roll";
         }
+    }
+
+    public void GameOver()
+    {
+        loseUI.SetActive(true);
+    }
+
+    public void Won()
+    {
+        winUI.SetActive(true);
+    }
+
+    public void WaveIncoming(int time)
+    {
+        incoming.SetActive(time > 0);
+        incomingText.text = "Wave incoming in " + time + " seconds";
     }
 }

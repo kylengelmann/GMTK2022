@@ -6,13 +6,19 @@ public class Endpoint : MonoBehaviour
 {
     DieBase die;
 
-    int face = 20;
+    public int face { get; private set;}
 
     float rollTime = .5f;
 
     float idleRotationSpeed = 36f;
 
     Coroutine currentRollRoutine;
+
+    private void Awake()
+    {
+        face = 20;
+    }
+
     void Start()
     {
         die = GetComponentInChildren<DieBase>();
@@ -43,6 +49,7 @@ public class Endpoint : MonoBehaviour
     {
         if(face <= 0)
         {
+            GameManager.gameManager.GameOver();
             return;
         }
             
