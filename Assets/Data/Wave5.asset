@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7893ab653bff7644801d4313ddbf585, type: 3}
   m_Name: Wave5
   m_EditorClassIdentifier: 
-  WaveTime: 45
+  WaveTime: 55
   postWaveTime: 10
   enemyWaves:
   - enemyPrefab: {fileID: 8667887087292982770, guid: 8c63c12d419b2c04cbdb2ae83ba0c20b, type: 3}
