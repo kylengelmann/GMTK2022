@@ -17,20 +17,20 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   mode:
-    overrideState: 0
+    overrideState: 1
     value: 0
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.399
   smoothness:
-    overrideState: 0
-    value: 0.2
+    overrideState: 1
+    value: 0.269
   roundness:
     overrideState: 0
     value: 1
@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: 324321267607305892}
   - {fileID: 4922842826574546566}
   - {fileID: -8941523084251173764}
+  - {fileID: 7730392568609571069}
 --- !u!114 &324321267607305892
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -77,8 +78,8 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   gradingMode:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0
   externalLut:
     overrideState: 0
     value: {fileID: 0}
@@ -124,17 +125,17 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   saturation:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 69
   brightness:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2
   postExposure:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -1388,13 +1389,13 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   mode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.55
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
   ambientOnly:
     overrideState: 0
@@ -1420,3 +1421,31 @@ MonoBehaviour:
   quality:
     overrideState: 0
     value: 2
+--- !u!114 &7730392568609571069
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 2.25
+  aperture:
+    overrideState: 0
+    value: 5.6
+  focalLength:
+    overrideState: 1
+    value: 40
+  kernelSize:
+    overrideState: 1
+    value: 0
