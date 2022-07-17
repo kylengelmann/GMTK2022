@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7893ab653bff7644801d4313ddbf585, type: 3}
   m_Name: Wave6
   m_EditorClassIdentifier: 
-  WaveTime: 45
-  postWaveTime: 0
+  WaveTime: 65
+  postWaveTime: 10
   enemyWaves:
-  - enemyPrefab: {fileID: 919132149155446097, guid: 8ca8a0eacccb9ac47a9c9297b924762a, type: 3}
-    numInWave: 0
-  - enemyPrefab: {fileID: 919132149155446097, guid: 98d21ec2da035454a81f3d37096b07ee, type: 3}
-    numInWave: 0
-  - enemyPrefab: {fileID: 919132149155446097, guid: c9286e07c1efd5640b7e306991a37b0f, type: 3}
-    numInWave: 0
-  - enemyPrefab: {fileID: 919132149155446097, guid: 16500865c8e321341862f83396b58795, type: 3}
-    numInWave: 0
+  - enemyPrefab: {fileID: 7076956065737363827, guid: 72efa7c6b82cfb348b4d179637fa170e, type: 3}
+    numInWave: 20
+  - enemyPrefab: {fileID: 7076956065737363827, guid: 9c34d1591b62037419059c600abfe4f3, type: 3}
+    numInWave: 20
+  - enemyPrefab: {fileID: 7076956065737363827, guid: 6de5bfc92127f6043bc1b732c9643e6f, type: 3}
+    numInWave: 20
+  - enemyPrefab: {fileID: 7076956065737363827, guid: 3d2a137cadd8f3e4eb51cdc116aefbe5, type: 3}
+    numInWave: 35
+  - enemyPrefab: {fileID: 8667887087292982770, guid: 8c63c12d419b2c04cbdb2ae83ba0c20b, type: 3}
+    numInWave: 20

@@ -22,6 +22,6 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 7076956065737363827, guid: 9c34d1591b62037419059c600abfe4f3, type: 3}
     numInWave: 12
   - enemyPrefab: {fileID: 7076956065737363827, guid: 6de5bfc92127f6043bc1b732c9643e6f, type: 3}
-    numInWave: 10
+    numInWave: 20
   - enemyPrefab: {fileID: 7076956065737363827, guid: 3d2a137cadd8f3e4eb51cdc116aefbe5, type: 3}
-    numInWave: 5
+    numInWave: 15
