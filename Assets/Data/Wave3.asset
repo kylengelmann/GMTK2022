@@ -16,10 +16,8 @@ MonoBehaviour:
   postWaveTime: 10
   enemyWaves:
   - enemyPrefab: {fileID: 8667887087292982770, guid: 8c63c12d419b2c04cbdb2ae83ba0c20b, type: 3}
-    numInWave: 10
+    numInWave: 8
   - enemyPrefab: {fileID: 7076956065737363827, guid: 72efa7c6b82cfb348b4d179637fa170e, type: 3}
-    numInWave: 15
+    numInWave: 5
   - enemyPrefab: {fileID: 7076956065737363827, guid: 9c34d1591b62037419059c600abfe4f3, type: 3}
-    numInWave: 10
-  - enemyPrefab: {fileID: 7076956065737363827, guid: 6de5bfc92127f6043bc1b732c9643e6f, type: 3}
     numInWave: 5

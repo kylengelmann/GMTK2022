@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 4.5
   Cooldown: 0.15
-  BurstCooldown: 0.75
+  BurstCooldown: 1
   BurstSize: 1
   bulletOrigin: {fileID: 569887281}
   bulletPrefab: {fileID: 8830621622708689185, guid: 58def1fa2ca0c2b48bd02c9b59b503e6, type: 3}
