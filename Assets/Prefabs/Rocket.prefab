@@ -15,7 +15,7 @@ MonoBehaviour:
   Speed: 3
   Damage: 1
   ExplosionRange: 1
-  CenterForce: 0.4
+  CenterForce: 2.5
   upImpulseRatio: 1
   CenterMaxTorque: 15
 --- !u!1001 &7523676320809220333

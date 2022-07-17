@@ -12,6 +12,9 @@ public class Cursor : MonoBehaviour
 
         Vector3 mouseLocation = mouseRay.origin + mouseRay.direction * (cursorHeight-mouseRay.origin.y) / mouseRay.direction.y;
 
-        transform.position = mouseLocation;
+        if(Mathf.Abs(mouseLocation.x) < 10f && Mathf.Abs(mouseLocation.z) < 10f)
+        {
+            transform.position = mouseLocation;
+        }
     }
 }

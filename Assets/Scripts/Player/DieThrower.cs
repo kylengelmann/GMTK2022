@@ -11,13 +11,6 @@ public class DieThrower : MonoBehaviour
 
     public int diceToThrow = 4;
     public float launchFudgeFactor = .3f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameObject cursorGO = Instantiate(cursorPrefab, transform);
-        cursor = cursorGO.GetComponent<Cursor>();
-    }
     
     void Update()
     {
@@ -46,6 +39,22 @@ public class DieThrower : MonoBehaviour
             newDieRB.AddTorque(Random.onUnitSphere * Random.Range(3f, 12f), ForceMode.VelocityChange);
 
             --diceToThrow;
+            if(diceToThrow <= 0)
+            {
+                GameManager.gameManager.SetIsRolling(false);
+            }
         }
+    }
+
+    private void OnEnable()
+    {
+        GameObject cursorGO = Instantiate(cursorPrefab, transform);
+        cursor = cursorGO.GetComponent<Cursor>();
+    }
+
+    private void OnDisable()
+    {
+        Destroy(cursor.gameObject);
+        cursor = null;
     }
 }

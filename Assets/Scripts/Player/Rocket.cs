@@ -18,8 +18,10 @@ public class Rocket : Bullet
             {
                 Vector3 toEnemy = enemy.rig.transform.position - transform.position;
 
-                float impulseStrength = Mathf.Lerp(CenterForce, 0f, Mathf.Pow(toEnemy.magnitude / ExplosionRange, 2f));
-                Vector3 Impulse = Vector3.ProjectOnPlane(toEnemy.normalized + Vector3.ProjectOnPlane(transform.up, Vector3.up).normalized, Vector3.up).normalized * impulseStrength + Vector3.up * impulseStrength * upImpulseRatio;
+                float impulseStrength = Mathf.Lerp(CenterForce, 0f, Mathf.Clamp01(Mathf.Pow(toEnemy.magnitude / ExplosionRange, 2f)));
+                Vector3 Impulse = Vector3.ProjectOnPlane(toEnemy.normalized + Vector3.ProjectOnPlane(transform.up, Vector3.up).normalized, Vector3.up).normalized * impulseStrength + Vector3.up * upImpulseRatio * impulseStrength;
+
+                Debug.Log(Impulse);
 
                 Vector3 AngularImpulse = Random.onUnitSphere * (1 - Mathf.Pow(Random.value, 2)) * Mathf.Lerp(CenterMaxTorque, 0f, toEnemy.magnitude / ExplosionRange);
                 

@@ -17,12 +17,15 @@ public class Enemy : MonoBehaviour
 
     public float rollDuration = .5f;
 
+    public int Coins = 1;
+
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.updateRotation = false;
 
         rig = GetComponentInChildren<Rigidbody>();
+        rig.isKinematic = true;
 
         die = GetComponentInChildren<DieBase>();
         die.onCollision += OnCollision;
@@ -69,8 +72,8 @@ public class Enemy : MonoBehaviour
     {
         navAgent.isStopped = true;
         rig.isKinematic = false;
-        rig.AddTorque(Impulse, ForceMode.Impulse);
-        rig.AddForce(AngularImpulse, ForceMode.Impulse);
+        rig.AddTorque(AngularImpulse, ForceMode.Impulse);
+        rig.AddForce(Impulse, ForceMode.Impulse);
     }
 
     public void Damage(int damage)
@@ -79,6 +82,7 @@ public class Enemy : MonoBehaviour
 
         if(Health <= 0)
         {
+            GameManager.gameManager.AddCoins(Coins);
             Destroy(gameObject);
             return;
         }

@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Gameeee.unity
+    guid: 1a20a05ac3c9c054b8846fbd45cca2c0
   m_configObjects: {}
