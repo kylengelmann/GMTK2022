@@ -12,12 +12,12 @@ TagManager:
   - Water
   - UI
   - End
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Tower
+  - TowerDie
+  - Enemy
+  - Bullet
+  - nav
+  - camera
   - 
   - 
   - 

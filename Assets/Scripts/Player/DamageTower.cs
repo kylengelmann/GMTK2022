@@ -8,6 +8,7 @@ public class DamageTower : MonoBehaviour
     public float Cooldown = 1f;
 
     public Transform bulletOrigin;
+    public GameObject bulletPrefab;
 
     private void Start()
     {
@@ -17,8 +18,6 @@ public class DamageTower : MonoBehaviour
     IEnumerator UpdateLoop()
     {
         WaitForSeconds wait = new WaitForSeconds(Cooldown);
-
-        float rangeSqrd = MaxRange*MaxRange;
 
         bool bDidShoot = false;
         while(true)
@@ -45,7 +44,9 @@ public class DamageTower : MonoBehaviour
             {
                 bDidShoot = true;
 
-                closestEnemy.Damage(1);
+                Vector3 toEnemy = closestEnemy.transform.position - bulletOrigin.position;
+
+                Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.FromToRotation(Vector3.up, toEnemy));
             }
 
             yield return bDidShoot ? wait : null;

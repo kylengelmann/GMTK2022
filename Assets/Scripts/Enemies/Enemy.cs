@@ -65,6 +65,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void Launch(Vector3 Impulse, Vector3 AngularImpulse)
+    {
+        navAgent.isStopped = true;
+        rig.isKinematic = false;
+        rig.AddTorque(Impulse, ForceMode.Impulse);
+        rig.AddForce(AngularImpulse, ForceMode.Impulse);
+    }
+
     public void Damage(int damage)
     {
         Health -= damage;
