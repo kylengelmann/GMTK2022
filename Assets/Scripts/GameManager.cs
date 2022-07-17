@@ -183,10 +183,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SpawnSFXAtLocation(AudioClip sfx, Vector3 location)
+    public void SpawnSFXAtLocation(AudioClip sfx, Vector3 location, float volume = 1f)
     {
         GameObject sfxGO = Instantiate(sfxPrefab, location, Quaternion.identity);
         sfxGO.GetComponent<AudioSource>().clip = sfx;
+        sfxGO.GetComponent<AudioSource>().volume = volume;
         sfxGO.GetComponent<AudioSource>().Play();
     }
 }
