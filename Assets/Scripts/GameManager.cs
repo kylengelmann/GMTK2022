@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
 
     bool bIsRestarting;
 
+    public GameObject sfxPrefab;
+
+    public AudioClip dieSound;
+
     private void Awake()
     {
         gameManager = this;
@@ -174,5 +178,12 @@ public class GameManager : MonoBehaviour
                 uiManager.UpdateReroll(NumReroll - rerollTowers.Count);
             }
         }
+    }
+
+    public void SpawnSFXAtLocation(AudioClip sfx, Vector3 location)
+    {
+        GameObject sfxGO = Instantiate(sfxPrefab, location, Quaternion.identity);
+        sfxGO.GetComponent<AudioSource>().clip = sfx;
+        sfxGO.GetComponent<AudioSource>().Play();
     }
 }

@@ -11,6 +11,13 @@ public class DieBase : MonoBehaviour
 
     Coroutine currentRoll;
 
+    Rigidbody rig;
+
+    [System.NonSerialized]
+    readonly float sfxCooldownTime = .5f;
+
+    float lastSFXTime = -1f;
+
     private void Awake()
     {
         int i = 1;
@@ -24,6 +31,8 @@ public class DieBase : MonoBehaviour
             }
             ++i;
         } while(face);
+
+        rig = GetComponent<Rigidbody>();
     }
 
     public int GetValue()
@@ -54,6 +63,11 @@ public class DieBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(rig && !rig.isKinematic && Time.time - lastSFXTime >= sfxCooldownTime)
+        {
+            GameManager.gameManager.SpawnSFXAtLocation(GameManager.gameManager.dieSound, collision.GetContact(0).point);
+        }
+
         if(onCollision != null)
         {
             onCollision(collision);

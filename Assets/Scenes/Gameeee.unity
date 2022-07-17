@@ -2694,6 +2694,8 @@ MonoBehaviour:
   NumReroll: 3
   InitialRoll: 3
   spawner: {fileID: 1795359343}
+  sfxPrefab: {fileID: 9197886653070390117, guid: 1a78567ef9f0f5c408de4e79b0d89aa9, type: 3}
+  dieSound: {fileID: 8300000, guid: 75fac1e63e1b5e14dbb2a8c053d79554, type: 3}
 --- !u!4 &1477202193
 Transform:
   m_ObjectHideFlags: 0
