@@ -114,7 +114,7 @@ MonoBehaviour:
   CenterForce: 2.5
   upImpulseRatio: 1
   CenterMaxTorque: 15
-  DamageRange: 0.5
+  DamageRange: 0.8
   booms:
   - {fileID: 8300000, guid: 091ceda369db9ce479380ffabd1b8a45, type: 3}
   - {fileID: 8300000, guid: 3dfe63f98be2907409ab1c6a5b4f9b3e, type: 3}
