@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 7569545666649321157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3892061, y: -11.996031, z: 13.677362}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 5981330167202280308}
   m_Father: {fileID: 0}
@@ -71,6 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f68de06819e6de4093a7be31949c5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eatClips:
+  - {fileID: 8300000, guid: 2c4214fee25cb9e4a8a0307c3e9e9ab3, type: 3}
+  - {fileID: 8300000, guid: 691dcfabd815ed24d85b0fca03026a28, type: 3}
+  - {fileID: 8300000, guid: 374d3280aca47cd4b9a1bc82ed7a24f3, type: 3}
+  - {fileID: 8300000, guid: a98a2c9e168b0544db50357d19dc39d7, type: 3}
 --- !u!1001 &6092048020404573343
 PrefabInstance:
   m_ObjectHideFlags: 0

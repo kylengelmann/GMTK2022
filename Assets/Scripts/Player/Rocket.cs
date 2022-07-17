@@ -8,6 +8,9 @@ public class Rocket : Bullet
     public float CenterForce = 2f;
     public float upImpulseRatio = .5f;
     public float CenterMaxTorque = 4f;
+    public float DamageRange = .5f;
+
+    public List<AudioClip> booms;
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -17,6 +20,15 @@ public class Rocket : Bullet
             if(enemy)
             {
                 Vector3 toEnemy = enemy.rig.transform.position - transform.position;
+
+                if(toEnemy.magnitude <= DamageRange)
+                {
+                    if(enemy.Health <= Damage)
+                    {
+                        enemy.Damage(Damage);
+                        continue;
+                    }
+                }
 
                 float impulseStrength = Mathf.Lerp(CenterForce, 0f, Mathf.Clamp01(Mathf.Pow(toEnemy.magnitude / ExplosionRange, 2f)));
                 Vector3 Impulse = Vector3.ProjectOnPlane(toEnemy.normalized + Vector3.ProjectOnPlane(transform.up, Vector3.up).normalized, Vector3.up).normalized * impulseStrength + Vector3.up * upImpulseRatio * impulseStrength;
@@ -28,6 +40,8 @@ public class Rocket : Bullet
                 enemy.Launch(Impulse, AngularImpulse);
             }
         }
+
+        GameManager.gameManager.SpawnSFXAtLocation(booms[Random.Range(0, booms.Count)], transform.position);
 
         Destroy(gameObject);
     }

@@ -14,6 +14,8 @@ public class Endpoint : MonoBehaviour
 
     Coroutine currentRollRoutine;
 
+    public List<AudioClip> eatClips;
+
     private void Awake()
     {
         face = 20;
@@ -52,7 +54,8 @@ public class Endpoint : MonoBehaviour
             GameManager.gameManager.GameOver();
             return;
         }
-            
+
+        GameManager.gameManager.SpawnSFXAtLocation(eatClips[Random.Range(0, eatClips.Count)], transform.position);
         die.RollToFace(face, rollTime);
     }
 }

@@ -67,3 +67,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollDuration: 0.5
+  Coins: 1
+  ows:
+  - {fileID: 8300000, guid: a6db0e09e3dbfaa4fba8750e858f0cfc, type: 3}

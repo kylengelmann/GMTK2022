@@ -13,11 +13,13 @@ public class Enemy : MonoBehaviour
     [System.NonSerialized]
     public GameObject End;
 
-    int Health;
+    public int Health { get; private set; }
 
     public float rollDuration = .5f;
 
     public int Coins = 1;
+
+    public List<AudioClip> ows;
 
     private void Awake()
     {
@@ -79,6 +81,8 @@ public class Enemy : MonoBehaviour
     public void Damage(int damage)
     {
         Health -= damage;
+
+        GameManager.gameManager.SpawnSFXAtLocation(ows[Random.Range(0, ows.Count)], transform.position);
 
         if(Health <= 0)
         {

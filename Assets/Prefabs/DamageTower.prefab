@@ -82,6 +82,9 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 0.25527194, b: 0.5660378, a: 1}
   hoverSpeed: 4
   renderer: {fileID: 5966528652190785508}
+  pews:
+  - {fileID: 8300000, guid: 9d06b9c007752c34d98a12241da7c12f, type: 3}
+  - {fileID: 8300000, guid: 699b7f0eed1fb9941a820eb7e4307516, type: 3}
 --- !u!1001 &4613916000863354642
 PrefabInstance:
   m_ObjectHideFlags: 0

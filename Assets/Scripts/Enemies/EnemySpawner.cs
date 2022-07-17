@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     int waveTimeLeft;
     public int wave { get; private set;}
 
+    public List<AudioClip> spawnClips;
+
     private void Start()
     {
         StartCoroutine(SpawnLoop());
@@ -49,6 +51,8 @@ public class EnemySpawner : MonoBehaviour
                 Enemy newEnemy = newEnemyGO.GetComponent<Enemy>();
                 newEnemy.navAgent.SetDestination(End.transform.position);
                 newEnemy.End = End;
+
+                GameManager.gameManager.SpawnSFXAtLocation(spawnClips[Random.Range(0, spawnClips.Count)], transform.position);
 
                 yield return new WaitForSeconds(waves[wave].spawnRate);
 

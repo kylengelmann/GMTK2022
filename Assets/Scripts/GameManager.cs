@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public int Coins{get; private set; }
 
+    public int StartingCoins;
+
     public UIManager uiManager;
 
     public DieThrower thrower;
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         gameManager = this;
+        Coins = StartingCoins;
         UpdateCoins();
         uiManager.UpdateReroll(0);
     }

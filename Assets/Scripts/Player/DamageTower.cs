@@ -23,6 +23,8 @@ public class DamageTower : MonoBehaviour
 
     public Renderer renderer;
 
+    public List<AudioClip> pews;
+
     private void Start()
     {
         StartCoroutine(UpdateLoop());
@@ -76,6 +78,7 @@ public class DamageTower : MonoBehaviour
                 Vector3 toEnemy = closestEnemy.transform.position - bulletOrigin.position;
 
                 Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.FromToRotation(Vector3.up, toEnemy));
+                if(pews.Count > 0) GameManager.gameManager.SpawnSFXAtLocation(pews[Random.Range(0, pews.Count)], bulletOrigin.position);
             }
 
             if(bDidShoot)
